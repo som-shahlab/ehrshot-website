@@ -1,2 +1,3 @@
-# ehrshot-website
+# EHRSHOT Website
+
 Public website for EHRSHOT
