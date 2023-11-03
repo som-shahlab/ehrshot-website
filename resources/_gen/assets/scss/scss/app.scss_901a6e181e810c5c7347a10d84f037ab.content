@@ -13609,4 +13609,7 @@ body {
   border-image-source: linear-gradient(83.21deg, #8C1515 0%, #f4a090 100%);
   border-image-slice: 1; }
 
+[data-bs-theme="dark"] h1, [data-bs-theme="dark"] .h1, [data-bs-theme="dark"] h2, [data-bs-theme="dark"] .h2, [data-bs-theme="dark"] h3, [data-bs-theme="dark"] .h3, [data-bs-theme="dark"] h4, [data-bs-theme="dark"] .h4, [data-bs-theme="dark"] .text-primary {
+  color: white !important; }
+
 /*# sourceMappingURL=main.css.map */

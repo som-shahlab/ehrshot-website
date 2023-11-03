@@ -3,9 +3,9 @@
 <link rel="stylesheet"
 href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,700i|Noto+Sans:400,400i,700,700i|Source+Code+Pro&amp;subset=latin-ext">
 
-<section class="section hero-subheader container-fluid mt-0 py-5">
+<section class="section hero-subheader container-fluid mt-0 py-5 px-0 px-md-3">
   
-  <div class="container">
+  <div class="container px-1 px-md-3">
     <div class="row justify-content-center">
       <div class="col-lg-12 text-center">
         <div style="font-size:40px">👂 💉 </div>
@@ -54,25 +54,25 @@ href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,7
     </div>
     
     <div class="row justify-content-center text-center mt-3 mb-4">
-      <div class="col-sm-6 col-md-4">
+      <div class="col-6 col-md-4">
         <h2 class="mt-3 mb-1">
           6,739
         </h2>
         patients
       </div>
-      <div class="col-sm-6 col-md-4">
+      <div class="col-6 col-md-4">
         <h2 class="mt-3 mb-1">
           41.6 million
         </h2>
         clinical events
       </div>
-      <div class="col-sm-6 col-md-4">
+      <div class="col-6 col-md-4">
         <h2 class="mt-3 mb-1">
           921,499
         </h2>
         visits
       </div>
-      <div class="col-sm-6 col-md-4">
+      <div class="col-6 col-md-4">
         <h2 class="mt-3 mb-1">
           15
         </h2>
@@ -83,19 +83,30 @@ href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,7
     <div style="text-align: justify; text-justify: inter-word;" class="mt-4"> 
       While the general machine learning (ML) community has benefited from public datasets, 
       tasks, and models, the progress of ML in healthcare has been hampered by a lack of such 
-      shared assets. The primary of foundation models creates new challenges for healthcare ML 
-      by requiring access to shared pretrained models to validate performance benefits. We help 
-      address these challenges through three contributions. First, we publish a new dataset, 
-      EHRSHOT, which contains de-identified structured data from the electronic health records 
-      (EHRs) of 6,739 patients from Stanford Medicine. Unlike MIMIC-III/IV and other popular EHR 
-      datasets, EHRSHOT is longitudinal and not restricted to ICU/ED patients. Second, we publish 
-      the weights of CLMBR-T-base, a 141M parameter clinical foundation model pretrained on the 
-      structured EHR data of 2.57M patients. We are one of the first to fully release such a model 
-      for coded EHR data; in contrast, most prior models released for clinical data (e.g. GatorTron, 
-      ClinicalBERT) only work with unstructured text and cannot process the rich, structured data 
-      within an EHR. We provide an end-to-end pipeline for the community to validate and build 
-      upon its performance. Third, we define 15 few-shot clinical prediction tasks, enabling 
-      evaluation of foundation models on benefits such as sample efficiency and task adaptation. 
+      shared assets. The success of foundation models creates new challenges for healthcare ML 
+      by requiring access to shared pretrained models to validate performance benefits.
+      <br /><br />
+      We help address these challenges through three contributions.
+      <br /><br />
+      <ol>
+        <li>
+          We publish a new dataset, <strong>EHRSHOT</strong>, which contains de-identified structured data from 
+          the electronic health records (EHRs) of <strong>6,739 patients</strong> from Stanford Medicine. 
+          Unlike MIMIC-III/IV and other popular EHR datasets, EHRSHOT is <strong>longitudinal</strong> and not restricted to ICU/ED patients. 
+        </li>
+        <li>
+          We release the full weights of <strong>CLMBR-T-base, a 141M parameter clinical foundation model</strong> pretrained on the 
+          structured EHR data of <strong>2.57M patients.</strong> We are one of the first to fully release such a model 
+          for coded EHR data; in contrast, most prior models released for clinical data (e.g. GatorTron, 
+          ClinicalBERT) only work with unstructured text and cannot process the rich, structured data 
+          within an EHR. We provide an end-to-end pipeline for the community to validate and build 
+          upon its performance.
+        </li>
+        <li>
+          We define <strong>15 few-shot clinical prediction tasks,</strong> enabling evaluation of foundation models on benefits 
+          such as sample efficiency and task adaptation.
+        </li>
+      </ol>
       Our model and dataset are available via a research data use agreement 
       <a href="https://stanfordaimi.azurewebsites.net/" target="_blank">at this link</a>. 
       Code to reproduce our results is available <a href="https://github.com/som-shahlab/ehrshot-benchmark" target="_blank">at this link</a>.
@@ -134,7 +145,7 @@ href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,7
       <p class="text-center">
         EHRSHOT includes 15 clinical classification tasks with canonical train/val/test splits, defined as follows.
       </p>
-      <div class="col-lg-12 mx-auto">
+      <div class="col-lg-12 mx-auto" style="overflow-x:scroll">
         <table class="mt-4" style="font-size:14px">
           <tr>
             <th>Task</th>
@@ -259,11 +270,14 @@ href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,7
         We include the performance of each model trained on the entire EHRSHOT training split on the 
         far right of every plot as <em>"All"</em>.
       </p>
-      <h4>AUROC</h4>
+      <p>
+        Check out <a href="/leaderboard">the Leaderboard</a> for up-to-date results.
+      </p>
+      <h5>AUROC</h5>
       <div class="col-lg-12 mx-auto">
         <img src="/images/taskgroups_auroc_all.png" class="border-0">
       </div>
-      <h4>AUPRC</h4>
+      <h5 class="mt-3">AUPRC</h5>
       <div class="col-lg-12 mx-auto">
         <img src="/images/taskgroups_auprc_all.png" class="border-0">
       </div>
