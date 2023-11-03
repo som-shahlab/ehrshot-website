@@ -2,8 +2,6 @@
 
 Public website for EHRSHOT
 
-
-
 ## Setup
 
 ```bash
@@ -19,3 +17,7 @@ Add images to `static/images/`
 Add pages to `content/`
 
 Menu -- `config/_default/menus.toml`
+
+## Deployment
+
+Follow the instructions here: https://github.com/h-enk/doks-gh-pages
