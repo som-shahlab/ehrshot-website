@@ -1,6 +1,8 @@
 # EHRSHOT Website
 
-Public website for EHRSHOT
+Public website for EHRSHOT.
+
+URL: [https://ehrshot.stanford.edu/](https://ehrshot.stanford.edu/)
 
 ## Setup
 
