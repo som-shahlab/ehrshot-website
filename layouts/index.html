@@ -1,0 +1,299 @@
+{{ define "main" }}
+
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,700i|Noto+Sans:400,400i,700,700i|Source+Code+Pro&amp;subset=latin-ext">
+
+<section class="section hero-subheader container-fluid mt-0 py-5">
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 text-center">
+        <div style="font-size:40px">👂 💉 </div>
+        <h1 class="mt-0">EHRSHOT</h1>
+      </div>
+      <div class="col-lg-12 text-center">
+        <p class="lead">
+          An EHR Benchmark for Few-Shot Evaluation of Foundation Models
+        </p>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="text-center">
+        <a class="btn btn-primary btn-md px-4 mb-2" href="https://arxiv.org/abs/2307.02028" target="_blank" role="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text-fill" viewBox="0 0 16 16">
+            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z"/>
+          </svg>
+          Paper
+        </a>
+        <a class="btn btn-primary btn-md px-4 mb-2" href="https://github.com/som-shahlab/ehrshot-benchmark/" target="_blank" role="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          GitHub
+        </a>
+        <!-- <a class="btn btn-primary btn-md px-4 mb-2" href="https://stanfordaimi.azurewebsites.net/datasets/54c5d2a1-ef39-489e-b5f8-8f9e27e9750b" target="_blank" role="button">
+          Dataset (TBD)
+        </a>
+        <a class="btn btn-primary btn-md px-4 mb-2" href="https://stanfordaimi.azurewebsites.net/datasets/54c5d2a1-ef39-489e-b5f8-8f9e27e9750b" target="_blank" role="button">
+          EHR Foundation Model (TBD)
+        </a> -->
+        <a class="btn btn-secondary btn-md px-4 mb-2 disabled" role="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database" viewBox="0 0 16 16">
+            <path d="M4.318 2.687C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4c0-.374.356-.875 1.318-1.313ZM13 5.698V7c0 .374-.356.875-1.318 1.313C10.766 8.729 9.464 9 8 9s-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777A4.92 4.92 0 0 0 13 5.698ZM14 4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13V4Zm-1 4.698V10c0 .374-.356.875-1.318 1.313C10.766 11.729 9.464 12 8 12s-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777A4.92 4.92 0 0 0 13 8.698Zm0 3V13c0 .374-.356.875-1.318 1.313C10.766 14.729 9.464 15 8 15s-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13s3.022-.289 4.096-.777c.324-.147.633-.323.904-.525Z"/>
+          </svg>
+          Dataset (TBD)
+        </a>
+        <a class="btn btn-secondary btn-md px-4 mb-2 disabled" role="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cpu" viewBox="0 0 16 16">
+            <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+          </svg>
+          EHR Foundation Model (TBD)
+        </a>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center text-center mt-3 mb-4">
+      <div class="col-sm-6 col-md-4">
+        <h2 class="mt-3 mb-1">
+          6,739
+        </h2>
+        patients
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <h2 class="mt-3 mb-1">
+          41.6 million
+        </h2>
+        clinical events
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <h2 class="mt-3 mb-1">
+          921,499
+        </h2>
+        visits
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <h2 class="mt-3 mb-1">
+          15
+        </h2>
+        prediction tasks
+      </div>
+    </div>
+
+    <div style="text-align: justify; text-justify: inter-word;" class="mt-4"> 
+      While the general machine learning (ML) community has benefited from public datasets, 
+      tasks, and models, the progress of ML in healthcare has been hampered by a lack of such 
+      shared assets. The primary of foundation models creates new challenges for healthcare ML 
+      by requiring access to shared pretrained models to validate performance benefits. We help 
+      address these challenges through three contributions. First, we publish a new dataset, 
+      EHRSHOT, which contains de-identified structured data from the electronic health records 
+      (EHRs) of 6,739 patients from Stanford Medicine. Unlike MIMIC-III/IV and other popular EHR 
+      datasets, EHRSHOT is longitudinal and not restricted to ICU/ED patients. Second, we publish 
+      the weights of CLMBR-T-base, a 141M parameter clinical foundation model pretrained on the 
+      structured EHR data of 2.57M patients. We are one of the first to fully release such a model 
+      for coded EHR data; in contrast, most prior models released for clinical data (e.g. GatorTron, 
+      ClinicalBERT) only work with unstructured text and cannot process the rich, structured data 
+      within an EHR. We provide an end-to-end pipeline for the community to validate and build 
+      upon its performance. Third, we define 15 few-shot clinical prediction tasks, enabling 
+      evaluation of foundation models on benefits such as sample efficiency and task adaptation. 
+      Our model and dataset are available via a research data use agreement 
+      <a href="https://stanfordaimi.azurewebsites.net/" target="_blank">at this link</a>. 
+      Code to reproduce our results is available <a href="https://github.com/som-shahlab/ehrshot-benchmark" target="_blank">at this link</a>.
+    </div>
+    
+    <!-- Section -->
+    <div class="row justify-content-center d-md-block" style="margin-top:100px">
+      <h2 class="text-center text-primary">Overview</h2>
+      <hr style="width:40%;margin: 0 auto;" class="mb-3"/>
+      <p class="text-center">
+        We collect the structured data within the deidentified longitudinal EHRs of patients from Stanford Hospital.
+      </p>
+      <div class="col-lg-12 mx-auto">
+        <img src="/images/Figure_1.png" class="border-0 mt-2">
+      </div>
+    </div>
+    
+    <!-- Section -->
+    <div class="row justify-content-center d-md-block" style="margin-top:100px">
+      <h2 class="text-center text-primary">Comparison to Prior Work</h2>
+      <hr style="width:40%;margin: 0 auto;" class="mb-3"/>
+      <p>
+        Most prior benchmarks are (1) limited to the ICU setting and (2) not tailored towards few-shot evaluation of pre-trained models.
+        In contrast, EHRSHOT contains (1) the full breadth of longitudinal data that a health system would expect to have on the patients it treats 
+        and (2) a broad range of tasks designed to evaluate models' task adaptation and few-shot capabilities.
+      </p>
+      <div class="col-lg-12 mx-auto">
+        <img src="/images/comparison.png" class="border-0 mt-2">
+      </div>
+    </div>
+    
+    <!-- Section -->
+    <div class="row justify-content-center d-md-block" style="margin-top:100px">
+      <h2 class="text-center text-primary">Tasks</h2>
+      <hr style="width:40%;margin: 0 auto;" class="mb-3"/>
+      <p class="text-center">
+        EHRSHOT includes 15 clinical classification tasks with canonical train/val/test splits, defined as follows.
+      </p>
+      <div class="col-lg-12 mx-auto">
+        <table class="mt-4" style="font-size:14px">
+          <tr>
+            <th>Task</th>
+            <th>Type</th>
+            <th>Prediction Time</th>
+            <th>Time Horizon</th>
+          </tr>
+          <tr>
+            <td>Long Length of Stay</td>
+            <td>Binary</td>
+            <td>11:59pm on day of admission</td>
+            <td>Admission duration</td>
+          </tr>
+          <tr>
+            <td>30-day Readmission</td>
+            <td>Binary</td>
+            <td>11:59pm on day of discharge</td>
+            <td>30-days post discharge</td>
+          </tr>
+          <tr>
+            <td>ICU Transfer</td>
+            <td>Binary</td>
+            <td>11:59pm on day of admission</td>
+            <td>Admission duration</td>
+          </tr>
+          <tr>
+            <td>Thrombocytopenia</td>
+            <td>4-way Multiclass</td>
+            <td>Immediately before result is recorded</td>
+            <td>Next result</td>
+          </tr>
+          <tr>
+            <td>Hyperkalemia</td>
+            <td>4-way Multiclass</td>
+            <td>Immediately before result is recorded</td>
+            <td>Next result</td>
+          </tr>
+          <tr>
+            <td>Hypoglycemia</td>
+            <td>4-way Multiclass</td>
+            <td>Immediately before result is recorded</td>
+            <td>Next result</td>
+          </tr>
+          <tr>
+            <td>Hyponatremia</td>
+            <td>4-way Multiclass</td>
+            <td>Immediately before result is recorded</td>
+            <td>Next result</td>
+          </tr>
+          <tr>
+            <td>Anemia</td>
+            <td>4-way Multiclass</td>
+            <td>Immediately before result is recorded</td>
+            <td>Next result</td>
+          </tr>
+          <tr>
+            <td>Hypertension</td>
+            <td>Binary</td>
+            <td>11:59pm on day of discharge</td>
+            <td>1 year post-discharge</td>
+          </tr>
+          <tr>
+            <td>Hyperlipidemia</td>
+            <td>Binary</td>
+            <td>11:59pm on day of discharge</td>
+            <td>1 year post-discharge</td>
+          </tr>
+          <tr>
+            <td>Pancreatic Cancer</td>
+            <td>Binary</td>
+            <td>11:59pm on day of discharge</td>
+            <td>1 year post-discharge</td>
+          </tr>
+          <tr>
+            <td>Celiac</td>
+            <td>Binary</td>
+            <td>11:59pm on day of discharge</td>
+            <td>1 year post-discharge</td>
+          </tr>
+          <tr>
+            <td>Lupus</td>
+            <td>Binary</td>
+            <td>11:59pm on day of discharge</td>
+            <td>1 year post-discharge</td>
+          </tr>
+          <tr>
+            <td>Acute MI</td>
+            <td>Binary</td>
+            <td>11:59pm on day of discharge</td>
+            <td>1 year post-discharge</td>
+          </tr>
+          <tr>
+            <td>Chest X-Ray Findings</td>
+            <td>14-way Multilabel</td>
+            <td>24hrs before report is recorded</td>
+            <td>Next report</td>
+          </tr>
+        </table>
+      </div>
+      <p class="text-center">
+        We include a graphical summary of the different task definitions below.
+      </p>
+      <div class="col-lg-12 mx-auto">
+        <img src="/images/Figure_2.png" class="border-0 mt-2">
+      </div>
+    </div>
+    
+    <div class="row justify-content-center d-md-block" style="margin-top:100px">
+      <h2 class="text-center text-primary">Benchmarking Results</h2>
+      <hr style="width:40%;margin: 0 auto;" class="mb-3"/>
+      <p>
+        We evaluate each baseline model in a few-shot setting. For each of the 15 benchmark tasks, we 
+        steadily increase the number of examples <code>k</code> that each model sees from <code>k = 1</code> to the full training 
+        dataset, and record the model’s AUROC and AUPRC at each <code>k</code>.
+      </p>
+      <p>
+        In the below figures, the <strong>bolded lines</strong> are the Macro-AUC for each model within
+        a task category, averaged across all subtasks at each <code>k</code>. The lighter lines are the AUC for
+        each model on each subtask.
+      </p>
+      <p>
+        We include the performance of each model trained on the entire EHRSHOT training split on the 
+        far right of every plot as <em>"All"</em>.
+      </p>
+      <h4>AUROC</h4>
+      <div class="col-lg-12 mx-auto">
+        <img src="/images/taskgroups_auroc_all.png" class="border-0">
+      </div>
+      <h4>AUPRC</h4>
+      <div class="col-lg-12 mx-auto">
+        <img src="/images/taskgroups_auprc_all.png" class="border-0">
+      </div>
+    </div>
+    
+  </div>
+  
+</div>
+
+</div>
+
+
+</section>
+{{ end }}
+
+{{ define "sidebar-prefooter" }}
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2>Citation</h2>
+      <pre id="arxiv-citation" class="bg-light py-3">
+@article{wornow2023ehrshot,
+  title={EHRSHOT: An EHR Benchmark for Few-Shot Evaluation of Foundation Models}, 
+  author={Michael Wornow and Rahul Thapa and Ethan Steinberg and Jason Fries and Nigam Shah},
+  year={2023},
+  eprint={2307.02028},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG}
+}
+</pre>
+    </div>
+  </div>
+  {{ end }}
