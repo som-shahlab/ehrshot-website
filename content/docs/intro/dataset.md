@@ -20,15 +20,18 @@ EHRSHOT is a collection of 6,739 deidentified longitudinal electronic health rec
 
 EHRSHOT contains:
 * 6,739 patients
-* 41.6 million clinical events
-* 921,499 visits
+* 40,796,769 million clinical events
+* 923,687 visits
 * 15 prediction tasks
 
 Each patient consists of an ordered timeline of clinical events taken from the structured data of their EHR (e.g. diagnoses, procedures, prescriptions, etc.).
 
 ### Access
 
-These assets will be publicly shared in coming months, under a standard research Data Usage Agreement. We will update this page once the dataset is available.
+* [Dataset + Benchmark](https://redivis.com/datasets/53gc-8rhx41kgt)
+* [Model](https://huggingface.co/StanfordShahLab/clmbr-t-base)
+* [Code](https://github.com/som-shahlab/ehrshot-benchmark/) 
+* [Paper](https://arxiv.org/abs/2307.02028)
 
 ### Additional Details
 

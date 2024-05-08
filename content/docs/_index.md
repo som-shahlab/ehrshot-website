@@ -1,6 +1,6 @@
 ---
-title: "Docs"
-description: ""
+title: "EHRSHOT Docs"
+description: "Documentation for the EHRSHOT benchmark."
 summary: ""
 date: 2023-09-07T16:12:03+02:00
 lastmod: 2023-09-07T16:12:03+02:00
@@ -18,4 +18,4 @@ seo:
   noindex: false # false (default) or true
 ---
 
-Welcome to the EHRSHOT documentation. This documentation is a work in progress and will be updated in the future.
+Welcome to the documentation for the EHRSHOT benchmark.

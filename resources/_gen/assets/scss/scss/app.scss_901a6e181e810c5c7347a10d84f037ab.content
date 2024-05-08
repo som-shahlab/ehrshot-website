@@ -13612,4 +13612,7 @@ body {
 [data-bs-theme="dark"] h1, [data-bs-theme="dark"] .h1, [data-bs-theme="dark"] h2, [data-bs-theme="dark"] .h2, [data-bs-theme="dark"] h3, [data-bs-theme="dark"] .h3, [data-bs-theme="dark"] h4, [data-bs-theme="dark"] .h4, [data-bs-theme="dark"] .text-primary {
   color: white !important; }
 
+.leaderboard_table {
+  padding-top: 5px; }
+
 /*# sourceMappingURL=main.css.map */

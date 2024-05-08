@@ -20,7 +20,7 @@ The foundation model is based on [the CLMBR architecture (Steinberg et al. 2021)
 
 ### Access
 
-These assets will be publicly shared in coming months, under a standard research Data Usage Agreement. We will update this page once the model is available.
+The model benchmarked in EHRSHOT (CLMBR-t-base) [can be accessed on HuggingFace here](https://huggingface.co/StanfordShahLab/clmbr-t-base)
 
 ### Additional Details
 

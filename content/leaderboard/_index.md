@@ -18,4 +18,4 @@ seo:
   noindex: false # false (default) or true
 ---
 
-A running leaderboard of ML models evaluated on EHRSHOT.
+A running leaderboard of models evaluated on EHRSHOT.

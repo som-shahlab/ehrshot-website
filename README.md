@@ -7,7 +7,10 @@ URL: [https://ehrshot.stanford.edu/](https://ehrshot.stanford.edu/)
 ## Setup
 
 ```bash
+# Only run once --
 npm create hyas@latest -- --template doks
+
+# Run every time --
 npm install
 npm run dev
 ```
