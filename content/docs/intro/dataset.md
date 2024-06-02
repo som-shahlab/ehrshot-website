@@ -20,8 +20,8 @@ EHRSHOT is a collection of 6,739 deidentified longitudinal electronic health rec
 
 EHRSHOT contains:
 * 6,739 patients
-* 40,796,769 million clinical events
-* 923,687 visits
+* 41,661,637 million clinical events
+* 921,499 visits
 * 15 prediction tasks
 
 Each patient consists of an ordered timeline of clinical events taken from the structured data of their EHR (e.g. diagnoses, procedures, prescriptions, etc.).
