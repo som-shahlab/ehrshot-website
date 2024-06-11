@@ -18,4 +18,15 @@ seo:
   noindex: false # false (default) or true
 ---
 
-Welcome to the documentation for the EHRSHOT benchmark.
+<div style="text-align:left;">
+  <p>Welcome to the documentation for the EHRSHOT benchmark.</p>
+
+  Quick links for accessing...
+
+  * [Dataset + Benchmark](https://redivis.com/datasets/53gc-8rhx41kgt)
+  * [Model](https://huggingface.co/StanfordShahLab/clmbr-t-base)
+  * [Code](https://github.com/som-shahlab/ehrshot-benchmark/) 
+  * [Paper](https://arxiv.org/abs/2307.02028)
+
+  <p>Additional documentation:</p>
+</div>

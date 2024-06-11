@@ -16,13 +16,13 @@ seo:
 
 EHRSHOT releases the weights and code of a 141M-parameter foundation model pretrained on 2.57 million deidentified EHRs from Stanford Hospital.
 
-The foundation model is based on [the CLMBR architecture (Steinberg et al. 2021)](https://www.sciencedirect.com/science/article/pii/S1532046420302653), which uses a next token prediction task to learn representations for patients.
-
 ### Access
 
-The model benchmarked in EHRSHOT (CLMBR-t-base) [can be accessed on HuggingFace here](https://huggingface.co/StanfordShahLab/clmbr-t-base)
+* [Model](https://huggingface.co/StanfordShahLab/clmbr-t-base)
 
 ### Additional Details
+
+The foundation model is based on [the CLMBR architecture (Steinberg et al. 2021)](https://www.sciencedirect.com/science/article/pii/S1532046420302653), which uses a next token prediction task to learn representations for patients.
 
 For more information, please read [the original EHRSHOT paper](https://arxiv.org/abs/2307.02028).
 

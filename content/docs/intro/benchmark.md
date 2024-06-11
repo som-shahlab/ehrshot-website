@@ -16,6 +16,11 @@ seo:
 
 EHRSHOT contains 15 clinical prediction tasks. All tasks are binary classification.
 
+### Access
+
+* [Dataset + Benchmark](https://redivis.com/datasets/53gc-8rhx41kgt)
+* [Code](https://github.com/som-shahlab/ehrshot-benchmark/) 
+
 ### Tasks
 
 #### Operational Outcomes
@@ -77,12 +82,6 @@ This is the total number of patients and labels for each task in the benchmark a
 
 Please note that these numbers are slightly different from the numbers in the paper as the dataset was slightly altered in preparation for public release.
 
-### Access
-
-Please find the benchmark on Redivis, and the code to execute the benchmark on Github here:
-
-* [Dataset + Benchmark](https://redivis.com/datasets/53gc-8rhx41kgt)
-* [Code](https://github.com/som-shahlab/ehrshot-benchmark/) 
 
 ### Additional Details
 
