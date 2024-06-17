@@ -42,8 +42,8 @@ Each patient consists of an ordered timeline of clinical events taken from the s
 
 ##### Visits
 
-* Visits per patient (median): 2592.0
-* Visits per patient (mean): 6182.2
+* Visits per patient (median): 58.0
+* Visits per patient (mean): 136.7
 
 <img src="/images/dataset_visits.png" class="border-0 mt-2">
 
