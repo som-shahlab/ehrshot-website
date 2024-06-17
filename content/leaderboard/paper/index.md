@@ -20,14 +20,6 @@ seo:
 
 Leaerboard of model performance on the EHRSHOT benchmark using the original dataset from the EHRSHOT paper.
 
-**Dataset:** 
-
-* **Stats:**
-  * 6,739 patients
-  * 41,661,637 million clinical events
-  * 921,499 visits
-* **Source:** Stanford Medicine
-
 **Benchmark:**
 * **Metrics:** AUROC, AUPRC
 * **Number of Tasks:** 15
@@ -42,7 +34,7 @@ Leaerboard of model performance on the EHRSHOT benchmark using the original data
 
 ## Results
 
-In the tables below, `k` is the number of few-shot examples used to train each model.
+In the tables below, `k` is the number of few-shot examples used to train each model. For the `All` column, bootstrapped 95% CI's on the test set are shown.
 
 ### By Task Group
 
