@@ -14,7 +14,7 @@ seo:
   noindex: false # false (default) or true
 ---
 
-EHRSHOT is a collection of 6,739 deidentified longitudinal electronic health records (EHRs) sourced from Stanford Medicine.
+EHRSHOT is a collection of structured data from 6,739 deidentified longitudinal electronic health records (EHRs) sourced from Stanford Medicine.
 
 ### Access
 
@@ -28,7 +28,28 @@ EHRSHOT contains:
 * 921,499 visits
 * 15 prediction tasks
 
-Each patient consists of an ordered timeline of clinical events taken from the structured data of their EHR (e.g. diagnoses, procedures, prescriptions, etc.).
+Each patient consists of an ordered timeline of clinical events taken from the structured data of their EHR (e.g. diagnoses, procedures, prescriptions, etc.). Note that EHRSHOT does NOT contain clinical text or images.
+
+### Sample
+
+The raw EHRSHOT dataset is a single CSV with 41M rows that looks like:
+
+| patient_id | start              | end                | code   | value | unit | visit_id    | omop_table    |
+|------------|--------------------|--------------------|--------|-------|------|-------------|---------------|
+| 12  | 2010-04-08 01:30:00| 2010-04-09 10:33:00| CPT4/86850 |       |      | 4930  | procedure_occurrence |
+| 105  | 2001-10-28 16:11:00| 2001-10-28 16:11:00| SNOMED/387458008 |       |      | 940 | drug_exposure |
+| ... | ... | ... | ... | ... | ... | ... | ... |
+
+### Format
+The EHRSHOT dataset is a single CSV with these columns:
+1. `patient_id` - Integer - Unique identifier for patient
+2. `start` - Datetime - Start time of event
+3. `end` - Datetime (optional) - End time of event
+4. `code` - String - Name of the clinical event (e.g. "SNOMED/3950001" or "ICD10/I25.110")
+5. `value` - Float/String (optional) - Either a numerical value associated with an event (e.g. a lab test result) or a string associated with a categorical variable (e.g. "Yes/No" questions)
+6. `unit` - String (optional) - Unit of measurement for Value
+7. `visit_id` - Integer (optional) - Unique identifier for the visit during which this event occurred
+8. `omop_table` - String - Name of the source [OMOP-CDM table](https://ohdsi.github.io/CommonDataModel/cdm53.html) where this event was recorded
 
 ### Statistics
 
