@@ -78,6 +78,19 @@ Note: The timeline length is the time between the first and last visit for each 
 
 <img src="/images/dataset_timelines.png" class="border-0 mt-2">
 
+##### Visit Type Counts
+
+Here is the count of each type of visit. Note the higher prevalence of outpatient visits in EHRSHOT.
+
+| Visit Type         | Definition | Count  |
+|--------------------|------------|--------|
+| Visit/OP           | Outpatient Visit | 184318 |
+| Visit/OMOP4822458  | Office Visit | 132597 |
+| Visit/IP           | Inpatient Visit | 35748  |
+| Visit/OMOP4822461  | Laboratory Visit | 13240  |
+| Visit/ER           | Emergency Visit | 9553   |
+| Visit/ERIP         | Emergency Room and Inpatient Visit | 4861   |
+
 ### Additional Details
 
 For more information, please read [the original EHRSHOT paper](https://arxiv.org/abs/2307.02028).
