@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leaderboard on EHRSHOT</title>
+    <link>https://som-shahlab.github.io/ehrshot-website/leaderboard/</link>
+    <description>Recent content in Leaderboard on EHRSHOT</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2023 Hyas</copyright>
+    <lastBuildDate>Thu, 07 Sep 2023 16:27:22 +0200</lastBuildDate>
+    <atom:link href="https://som-shahlab.github.io/ehrshot-website/leaderboard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EHRSHOT Leaderboard</title>
+      <link>https://som-shahlab.github.io/ehrshot-website/leaderboard/paper/</link>
+      <pubDate>Thu, 07 Sep 2023 16:27:22 +0200</pubDate>
+      <guid>https://som-shahlab.github.io/ehrshot-website/leaderboard/paper/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preload" href="https://som-shahlab.github.io/ehrshot-website/fonts/vendor/jost/jost-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://som-shahlab.github.io/ehrshot-website/fonts/vendor/jost/jost-v4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://som-shahlab.github.io/ehrshot-website/fonts/vendor/jost/jost-v4-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  
+<link rel="stylesheet" href="/ehrshot-website/main.aa694448bfcbe3055b45562e4b960275fa805c14830851c32ae3bba642b73d0c828642d01355bb57937eeeafa3e6357f18bf632638c98e2037b44f482fe79403.css" integrity="sha512-qmlESL/L4wVbRVYuS5YCdfqAXBSDCFHDKuO7pkK3PQyChkLQE1W7V5N+7q+j5jV/GL9jJjjJjiA3tE9IL+eUAw==" crossorigin="anonymous">
+
+<noscript><style>img.lazyload { display: none; }</style></noscript>
+  <base href="https://som-shahlab.github.io/ehrshot-website/">
+  <link rel="canonical" href="ehrshot-benchmark.stanford.edu">
+  <link rel="alternate" type="application/rss+xml" href="https://som-shahlab.github.io/ehrshot-website/index.xml" title="EHRSHOT">
+<title>EHRSHOT</title>
+<meta name="description" content="An EHR Benchmark for Few-Shot Evaluation of Foundation Models. Whereas most prior EHR benchmarks are limited to the ICU setting, EHRSHOT contains the full longitudinal health records of 6,739 patients from Stanford Medicine and a diverse set of 15 classification tasks tailored towards few-shot evaluation of pre-trained models.">
+
+    
+    <link rel="icon" href="https://som-shahlab.github.io/ehrshot-website/favicon.ico" sizes="32x32">
+    
+      <link rel="icon" href="https://som-shahlab.github.io/ehrshot-website/favicon.svg" type="image/svg+xml">
+    
+      <link
+        rel="apple-touch-icon"
+        href="https://som-shahlab.github.io/ehrshot-website/apple-touch-icon.png"
+        sizes="180x180"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="https://som-shahlab.github.io/ehrshot-website/favicon-192x192.png"
+        sizes="192x192"
+        type="image/png"
+      >
+      <link
+        rel="icon"
+        href="https://som-shahlab.github.io/ehrshot-website/favicon-512x512.png"
+        sizes="512x512"
+        type="image/png"
+      >
+<link rel="manifest" href="https://som-shahlab.github.io/ehrshot-website/manifest.webmanifest">
+<meta property="og:title" content="EHRSHOT">
+<meta property="og:description" content="EHRSHOT contains the full longitudinal health records of 6,739 patients from Stanford Medicine and a diverse set of 15 classification tasks tailored towards few-shot evaluation of pre-trained foundation models.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://som-shahlab.github.io/ehrshot-website/"><meta property="og:site_name" content="EHRSHOT">
+
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="EHRSHOT">
+<meta name="twitter:description" content="EHRSHOT contains the full longitudinal health records of 6,739 patients from Stanford Medicine and a diverse set of 15 classification tasks tailored towards few-shot evaluation of pre-trained foundation models.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "url": "https://som-shahlab.github.io/ehrshot-website/",
+      "name": "EHRSHOT",
+      "description": ""
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "url": "https://som-shahlab.github.io/ehrshot-website/",
+      "name": "Hyas",
+      "image": [
+        {
+          "@id": "https://som-shahlab.github.io/ehrshot-website/cover.png"
+        }
+      ],
+      "logo": {
+        "@id": "https://som-shahlab.github.io/ehrshot-website/favicon-512x512.png"
+      }
+    }
+  ]
+}
+</script>
+
+
+
+
+  
+
+  </head>
+
+  
+  <body class="single home">
+    
+<meta name="lb-base" content="https://som-shahlab.github.io/ehrshot-website/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+
+
+<section class="hp-hero">
+  <div class="hp-hero__inner">
+    <div class="hp-hero__text">
+      <h1 class="hp-hero__title">EHRSHOT</h1>
+      <p class="hp-hero__lead">A benchmark for few-shot evaluation of EHR foundation models</p>
+      <p class="hp-hero__tagline">15 clinical prediction tasks &middot; longitudinal data &middot; reproducible leaderboard</p>
+      <div class="hp-cta-row">
+        <a class="hp-btn hp-btn--secondary" href="https://som-shahlab.github.io/ehrshot-website/leaderboard/paper/">Leaderboard</a>
+        <a class="hp-btn hp-btn--secondary" href="https://proceedings.neurips.cc/paper_files/paper/2023/file/d42db1f74df54cb992b3956eb7f15a6f-Paper-Datasets_and_Benchmarks.pdf" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z"/></svg>
+          Paper
+        </a>
+        <a class="hp-btn hp-btn--secondary" href="https://huggingface.co/StanfordShahLab/clmbr-t-base" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          Pretrained Model
+        </a>
+        <a class="hp-btn hp-btn--secondary" href="https://github.com/som-shahlab/ehrshot-benchmark/" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="hp-hero__visual">
+      <div class="hp-hero__glow"></div>
+      <div class="hp-leaderboard-card">
+        <div class="hp-lbc__header">
+          <h2 class="hp-lbc__title">Leaderboard</h2>
+          <span class="hp-lbc__version" id="hero-dataset-version"></span>
+        </div>
+        <div class="hp-lbc__toggles">
+          <div class="hp-lbc__toggle-group" id="hero-metric-toggle">
+            <button class="hp-lbc__toggle hp-lbc__toggle--active" data-val="auroc">AUROC</button>
+            <button class="hp-lbc__toggle" data-val="auprc">AUPRC</button>
+          </div>
+          <div class="hp-lbc__toggle-group" id="hero-scope-toggle">
+            <button class="hp-lbc__toggle hp-lbc__toggle--active" data-val="all">All</button>
+            <button class="hp-lbc__toggle" data-val="fewshot">Few-shot</button>
+          </div>
+        </div>
+        <div id="hero-leaderboard">
+          <p class="hp-lbc__loading">Loading&hellip;</p>
+        </div>
+        <div class="hp-lbc__footer">
+          <a href="https://som-shahlab.github.io/ehrshot-website/leaderboard/paper/" class="hp-lbc__link">See Full Leaderboard &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hp-stats">
+  <div class="hp-stats__inner">
+    <div class="hp-stat-card">
+      <div class="hp-stat-card__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="hp-stat-card__number">6,739</div>
+      <div class="hp-stat-card__label">Patients</div>
+      <div class="hp-stat-card__desc">Longitudinal, non-ICU restricted</div>
+    </div>
+    <div class="hp-stat-card">
+      <div class="hp-stat-card__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <div class="hp-stat-card__number">41.7M</div>
+      <div class="hp-stat-card__label">Events</div>
+      <div class="hp-stat-card__desc">Structured EHR signals</div>
+    </div>
+    <div class="hp-stat-card">
+      <div class="hp-stat-card__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="hp-stat-card__number">921k</div>
+      <div class="hp-stat-card__label">Visits</div>
+      <div class="hp-stat-card__desc">Real-world care trajectories</div>
+    </div>
+    <div class="hp-stat-card">
+      <div class="hp-stat-card__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="hp-stat-card__number">15</div>
+      <div class="hp-stat-card__label">Tasks</div>
+      <div class="hp-stat-card__desc">Curated prediction suite</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hp-section">
+  <div class="hp-section__inner">
+    <h2 class="hp-section-title">What is EHRSHOT?</h2>
+
+    <div class="hp-features">
+      <div class="hp-feature-card">
+        <div class="hp-feature-card__icon hp-feature-card__icon--blue">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <h3 class="hp-feature-card__title">New Longitudinal EHR Dataset</h3>
+        <p class="hp-feature-card__body">Our dataset contains de-identified structured data from the electronic health records of <strong>6,729 patients</strong> from Stanford Medicine. Unlike MIMIC-III/IV, <strong>EHRSHOT</strong> is longitudinal and not restricted to ICU/ED.</p>
+        <div class="hp-feature-card__cta">
+          <a class="hp-btn hp-btn--outline" href="https://redivis.com/datasets/53gc-8rhx41kgt" target="_blank" rel="noopener">Dataset</a>
+        </div>
+      </div>
+
+      <div class="hp-feature-card">
+        <div class="hp-feature-card__icon hp-feature-card__icon--green">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3 class="hp-feature-card__title">Curated Tasks for Benchmarking</h3>
+        <p class="hp-feature-card__body">Evaluate machine learning models using 15 clinical tasks covering diagnostics, patient outcomes, and resource allocation. Tasks are few-shot focused, requiring only a few labeled examples.</p>
+        <div class="hp-feature-card__cta">
+          <a class="hp-btn hp-btn--outline" href="https://som-shahlab.github.io/ehrshot-website/tasks/">View Tasks</a>
+        </div>
+      </div>
+
+      <div class="hp-feature-card">
+        <div class="hp-feature-card__icon hp-feature-card__icon--amber">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7 4 7 7 7 7"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5C17 4 17 7 17 7"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        </div>
+        <h3 class="hp-feature-card__title">Reproducible Leaderboard &amp; Baselines</h3>
+        <p class="hp-feature-card__body">Compare your model to strong baselines and other submissions using our leaderboard to see how they perform across 15 prediction tasks and updated easily with reproducible evaluation scripts.</p>
+        <div class="hp-feature-card__cta">
+          <a class="hp-btn hp-btn--outline" href="https://som-shahlab.github.io/ehrshot-website/leaderboard/paper/">Leaderboard</a>
+          <a class="hp-btn hp-btn--ghost" href="https://huggingface.co/StanfordShahLab" target="_blank" rel="noopener">Models &rsaquo;</a>
+          <a class="hp-btn hp-btn--ghost" href="https://github.com/som-shahlab/ehrshot-benchmark/" target="_blank" rel="noopener">GitHub &rsaquo;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+(function() {
+  var base = document.querySelector('meta[name="lb-base"]');
+  var baseURL = base ? base.content.replace(/\/$/, '') : '';
+  var container = document.getElementById('hero-leaderboard');
+  if (!container) return;
+
+  var RANK_COLORS = ['#E8A735', '#27ae60', '#2980b9', '#8e44ad'];
+  var heroState = { metric: 'auroc', scope: 'all' };
+  var lbData = null;
+
+  function getAllTasks(data) {
+    var tasks = [];
+    var groups = Object.keys(data.taskGroups);
+    for (var i = 0; i < groups.length; i++) {
+      var t = data.taskGroups[groups[i]];
+      for (var j = 0; j < t.length; j++) tasks.push(t[j]);
+    }
+    return tasks;
+  }
+
+  function computeScores(data, metric, scope) {
+    var individual = data.individual && data.individual[metric];
+    if (!individual) return [];
+
+    var allTasks = getAllTasks(data);
+    var totalTaskCount = allTasks.length;
+    var results = [];
+
+    for (var mi = 0; mi < data.models.length; mi++) {
+      var m = data.models[mi];
+      var sum = 0, count = 0;
+
+      for (var ti = 0; ti < allTasks.length; ti++) {
+        var task = allTasks[ti];
+        var entry = individual[task] && individual[task][m];
+        if (!entry) continue;
+
+        if (scope === 'all') {
+          var val = parseFloat(entry.all);
+          if (!isNaN(val)) { sum += val; count++; }
+        } else {
+          
+          var kObj = entry.k;
+          if (!kObj) continue;
+          var kKeys = Object.keys(kObj);
+          var kSum = 0, kCount = 0;
+          for (var ki = 0; ki < kKeys.length; ki++) {
+            var kVal = kObj[kKeys[ki]];
+            var mean = typeof kVal === 'object' ? kVal.mean : kVal;
+            if (typeof mean === 'number' && !isNaN(mean)) { kSum += mean; kCount++; }
+          }
+          if (kCount > 0) { sum += kSum / kCount; count++; }
+        }
+      }
+
+      
+      if (count === totalTaskCount) {
+        results.push({ model: m, score: sum / count, tasks: count });
+      }
+    }
+
+    results.sort(function(a, b) { return b.score - a.score; });
+    return results.slice(0, 4);
+  }
+
+  function renderTable(top, metricLabel) {
+    if (!top.length) {
+      container.innerHTML = '<p class="hp-lbc__loading">No complete results</p>';
+      return;
+    }
+    var meta = lbData.modelMeta || {};
+    var html = '<table class="hp-lbc__table"><thead><tr>' +
+      '<th>Rank</th><th>Model</th><th>' + metricLabel + '</th><th>Run Date</th>' +
+      '</tr></thead><tbody>';
+
+    for (var i = 0; i < top.length; i++) {
+      var mMeta = meta[top[i].model] || {};
+      var runDate = mMeta.runDate || '—';
+      html += '<tr>' +
+        '<td><span class="hp-lbc__rank" style="background:' + RANK_COLORS[i] + '">' + (i + 1) + '</span></td>' +
+        '<td class="hp-lbc__model">' + top[i].model + '</td>' +
+        '<td class="hp-lbc__score"><strong>' + top[i].score.toFixed(3) + '</strong></td>' +
+        '<td class="hp-lbc__date">' + runDate + '</td>' +
+        '</tr>';
+    }
+    html += '</tbody></table>';
+    container.innerHTML = html;
+  }
+
+  function update() {
+    if (!lbData) return;
+    var label = heroState.metric.toUpperCase();
+    var top = computeScores(lbData, heroState.metric, heroState.scope);
+    renderTable(top, label);
+  }
+
+  function setupToggles() {
+    var metricGroup = document.getElementById('hero-metric-toggle');
+    var scopeGroup = document.getElementById('hero-scope-toggle');
+
+    metricGroup.addEventListener('click', function(e) {
+      var btn = e.target.closest('button');
+      if (!btn || btn.classList.contains('hp-lbc__toggle--active')) return;
+      metricGroup.querySelector('.hp-lbc__toggle--active').classList.remove('hp-lbc__toggle--active');
+      btn.classList.add('hp-lbc__toggle--active');
+      heroState.metric = btn.getAttribute('data-val');
+      update();
+    });
+
+    scopeGroup.addEventListener('click', function(e) {
+      var btn = e.target.closest('button');
+      if (!btn || btn.classList.contains('hp-lbc__toggle--active')) return;
+      scopeGroup.querySelector('.hp-lbc__toggle--active').classList.remove('hp-lbc__toggle--active');
+      btn.classList.add('hp-lbc__toggle--active');
+      heroState.scope = btn.getAttribute('data-val');
+      update();
+    });
+  }
+
+  fetch(baseURL + '/data/leaderboard.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      lbData = data;
+      var versionEl = document.getElementById('hero-dataset-version');
+      if (versionEl && data.datasetVersion) {
+        versionEl.textContent = 'Dataset ' + data.datasetVersion;
+      }
+      setupToggles();
+      update();
+    })
+    .catch(function() { container.innerHTML = ''; });
+})();
+</script>
+
+
+    <script async 
+src="https://som-shahlab.github.io/ehrshot-website/js/bootstrap.8669f048a0e9a5d47dc657306109ab437da6683ad925fbd6a451aef72542a787.js"
+integrity="sha256-hmnwSKDppdR9xlcwYQmrQ32maDrZJfvWpFGu9yVCp4c="></script>
+
+<script async 
+src="https://som-shahlab.github.io/ehrshot-website/js/app.66ae7251afe4c8eb990763cf02524a53c6ed0f25ef7bd129124d3e48f8fda5ca.js"
+integrity="sha256-Zq5yUa/kyOuZB2PPAlJKU8btDyXve9EpEk0&#43;SPj9pco="></script>
+
+
+
+
+
+    </body>
+</html>

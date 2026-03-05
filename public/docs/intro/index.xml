@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Get Started on EHRSHOT</title>
+    <link>https://som-shahlab.github.io/ehrshot-website/docs/intro/</link>
+    <description>Recent content in Get Started on EHRSHOT</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2023 Hyas</copyright>
+    <lastBuildDate>Thu, 07 Sep 2023 16:06:50 +0200</lastBuildDate>
+    <atom:link href="https://som-shahlab.github.io/ehrshot-website/docs/intro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Benchmark</title>
+      <link>https://som-shahlab.github.io/ehrshot-website/docs/intro/benchmark/</link>
+      <pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate>
+      <guid>https://som-shahlab.github.io/ehrshot-website/docs/intro/benchmark/</guid>
+      <description>&lt;p&gt;EHRSHOT contains 15 clinical prediction tasks. All tasks are binary classification.&lt;/p&gt;&#xA;&lt;h3 id=&#34;access&#34;&gt;Access&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://redivis.com/datasets/53gc-8rhx41kgt&#34;&gt;Dataset + Benchmark&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/som-shahlab/ehrshot-benchmark/&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;tasks&#34;&gt;Tasks&lt;/h3&gt;&#xA;&lt;h4 id=&#34;operational-outcomes&#34;&gt;Operational Outcomes&lt;/h4&gt;&#xA;&lt;p&gt;These tasks are related to hospital operations. They are defined as follows:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dataset</title>
+      <link>https://som-shahlab.github.io/ehrshot-website/docs/intro/dataset/</link>
+      <pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate>
+      <guid>https://som-shahlab.github.io/ehrshot-website/docs/intro/dataset/</guid>
+      <description>&lt;p&gt;EHRSHOT is a collection of structured data from 6,739 deidentified longitudinal electronic health records (EHRs) sourced from Stanford Medicine.&lt;/p&gt;&#xA;&lt;h3 id=&#34;access&#34;&gt;Access&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://redivis.com/datasets/53gc-8rhx41kgt&#34;&gt;Dataset + Benchmark&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;datasheet&#34;&gt;Datasheet&lt;/h3&gt;&#xA;&lt;p&gt;EHRSHOT contains:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Foundation Model</title>
+      <link>https://som-shahlab.github.io/ehrshot-website/docs/intro/foundation-model/</link>
+      <pubDate>Thu, 07 Sep 2023 16:06:50 +0200</pubDate>
+      <guid>https://som-shahlab.github.io/ehrshot-website/docs/intro/foundation-model/</guid>
+      <description>&lt;p&gt;EHRSHOT releases the weights and code of a 141M-parameter foundation model pretrained on 2.57 million deidentified EHRs from Stanford Hospital.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
