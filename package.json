@@ -21,8 +21,7 @@
     "clean:lint": "shx rm -rf .eslintcache .stylelintcache",
     "preinfo": "npm version",
     "info": "npm list",
-    "postinfo": "exec-bin node_modules/.bin/hugo/hugo version",
-    "postinstall": "shx rm -rf node_modules/.bin/hugo && shx mkdir node_modules/.bin/hugo && shx cp node_modules/gethyas/node_modules/.bin/hugo/* node_modules/.bin/hugo"
+    "postinfo": "exec-bin node_modules/.bin/hugo/hugo version"
   },
   "dependencies": {
     "@hyas/doks-core": "^1.1.1"
