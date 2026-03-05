@@ -1,9 +1,4 @@
 [[main]]
-  name = "Docs"
-  url = "docs/"
-  weight = 10
-
-[[main]]
   name = "Dataset"
   url = "https://redivis.com/datasets/53gc-8rhx41kgt"
   weight = 15
@@ -12,17 +7,17 @@
 
 [[main]]
   name = "Tasks"
-  url = "docs/intro/benchmark/"
+  url = "tasks/"
   weight = 20
 
 [[main]]
   name = "Leaderboard"
-  url = "leaderboard/"
+  url = "leaderboard/paper/"
   weight = 30
 
 [[main]]
   name = "Paper"
-  url = "https://arxiv.org/abs/2307.02028"
+  url = "https://proceedings.neurips.cc/paper_files/paper/2023/file/d42db1f74df54cb992b3956eb7f15a6f-Paper-Datasets_and_Benchmarks.pdf"
   weight = 40
   [main.params]
     external = true

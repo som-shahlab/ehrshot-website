@@ -35,6 +35,11 @@
       return;
     }
 
+    const versionEl = document.getElementById('lb-dataset-version');
+    if (versionEl && STATE.data.datasetVersion) {
+      versionEl.textContent = 'Dataset ' + STATE.data.datasetVersion;
+    }
+
     STATE.selectedModels = new Set(STATE.data.models);
     buildControls();
     render();
@@ -173,10 +178,13 @@
     for (const g of groups) {
       html += `<th class="lb-sortable" data-sort="group_${g}">${g} ${sortArrow('group_' + g)}</th>`;
     }
+    html += `<th>Run Date</th>`;
     html += '</tr></thead><tbody>';
 
+    const meta = STATE.data.modelMeta || {};
     for (const row of rows) {
       const color = MODEL_COLORS[row.model] || '#666';
+      const runDate = (meta[row.model] && meta[row.model].runDate) || '\u2014';
       html += `<tr>
         <td class="lb-td--model"><span class="lb-model-dot" style="background:${color}"></span>${row.model}</td>`;
       for (const g of groups) {
@@ -188,6 +196,7 @@
           html += `<td class="${best}">${d.all.toFixed(3)}${d.ci ? ' <span class="lb-ci">(' + d.ci + ')</span>' : ''}</td>`;
         }
       }
+      html += `<td class="lb-date">${runDate}</td>`;
       html += '</tr>';
     }
 

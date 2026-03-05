@@ -10,8 +10,8 @@
       <p class="hp-hero__lead">A benchmark for few-shot evaluation of EHR foundation models</p>
       <p class="hp-hero__tagline">15 clinical prediction tasks &middot; longitudinal data &middot; reproducible leaderboard</p>
       <div class="hp-cta-row">
-        <a class="hp-btn hp-btn--primary" href="{{ "leaderboard/" | relURL }}">View Leaderboard</a>
-        <a class="hp-btn hp-btn--secondary" href="https://arxiv.org/abs/2307.02028" target="_blank" rel="noopener">
+        <a class="hp-btn hp-btn--primary" href="{{ "leaderboard/paper/" | relURL }}">View Leaderboard</a>
+        <a class="hp-btn hp-btn--secondary" href="https://proceedings.neurips.cc/paper_files/paper/2023/file/d42db1f74df54cb992b3956eb7f15a6f-Paper-Datasets_and_Benchmarks.pdf" target="_blank" rel="noopener">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z"/></svg>
           Paper
         </a>
@@ -27,16 +27,23 @@
       <div class="hp-leaderboard-card">
         <div class="hp-lbc__header">
           <h2 class="hp-lbc__title">Leaderboard</h2>
-          <div class="hp-lbc__pills">
-            <span class="hp-lbc__pill hp-lbc__pill--active">AUROC</span>
-            <span class="hp-lbc__pill">All Tasks</span>
+          <span class="hp-lbc__version" id="hero-dataset-version"></span>
+        </div>
+        <div class="hp-lbc__toggles">
+          <div class="hp-lbc__toggle-group" id="hero-metric-toggle">
+            <button class="hp-lbc__toggle hp-lbc__toggle--active" data-val="auroc">AUROC</button>
+            <button class="hp-lbc__toggle" data-val="auprc">AUPRC</button>
+          </div>
+          <div class="hp-lbc__toggle-group" id="hero-scope-toggle">
+            <button class="hp-lbc__toggle hp-lbc__toggle--active" data-val="all">All</button>
+            <button class="hp-lbc__toggle" data-val="fewshot">Few-shot</button>
           </div>
         </div>
         <div id="hero-leaderboard">
           <p class="hp-lbc__loading">Loading&hellip;</p>
         </div>
         <div class="hp-lbc__footer">
-          <a href="{{ "leaderboard/" | relURL }}" class="hp-lbc__link">See Full Leaderboard &rarr;</a>
+          <a href="{{ "leaderboard/paper/" | relURL }}" class="hp-lbc__link">See Full Leaderboard &rarr;</a>
         </div>
       </div>
     </div>
@@ -95,7 +102,6 @@
         <p class="hp-feature-card__body">Our dataset contains de-identified structured data from the electronic health records of <strong>6,729 patients</strong> from Stanford Medicine. Unlike MIMIC-III/IV, <strong>EHRSHOT</strong> is longitudinal and not restricted to ICU/ED.</p>
         <div class="hp-feature-card__cta">
           <a class="hp-btn hp-btn--outline" href="https://redivis.com/datasets/53gc-8rhx41kgt" target="_blank" rel="noopener">Dataset</a>
-          <a class="hp-btn hp-btn--ghost" href="{{ "docs/intro/dataset/" | relURL }}">Dataset &rsaquo;</a>
         </div>
       </div>
 
@@ -106,8 +112,7 @@
         <h3 class="hp-feature-card__title">Curated Tasks for Benchmarking</h3>
         <p class="hp-feature-card__body">Evaluate machine learning models using 15 clinical tasks covering diagnostics, patient outcomes, and resource allocation. Tasks are few-shot focused, requiring only a few labeled examples.</p>
         <div class="hp-feature-card__cta">
-          <a class="hp-btn hp-btn--outline" href="{{ "docs/intro/benchmark/" | relURL }}">View Tasks</a>
-          <a class="hp-btn hp-btn--ghost" href="{{ "docs/intro/benchmark/" | relURL }}">Dataset &rsaquo;</a>
+          <a class="hp-btn hp-btn--outline" href="{{ "tasks/" | relURL }}">View Tasks</a>
         </div>
       </div>
 
@@ -118,8 +123,8 @@
         <h3 class="hp-feature-card__title">Reproducible Leaderboard &amp; Baselines</h3>
         <p class="hp-feature-card__body">Compare your model to strong baselines and other submissions using our leaderboard to see how they perform across 15 prediction tasks and updated easily with reproducible evaluation scripts.</p>
         <div class="hp-feature-card__cta">
-          <a class="hp-btn hp-btn--outline" href="{{ "leaderboard/" | relURL }}">Leaderboard</a>
-          <a class="hp-btn hp-btn--ghost" href="{{ "docs/" | relURL }}">Docs &rsaquo;</a>
+          <a class="hp-btn hp-btn--outline" href="{{ "leaderboard/paper/" | relURL }}">Leaderboard</a>
+          <a class="hp-btn hp-btn--ghost" href="https://github.com/som-shahlab/ehrshot-benchmark/" target="_blank" rel="noopener">GitHub &rsaquo;</a>
         </div>
       </div>
     </div>
@@ -135,43 +140,128 @@
   if (!container) return;
 
   var RANK_COLORS = ['#E8A735', '#27ae60', '#2980b9', '#8e44ad'];
+  var heroState = { metric: 'auroc', scope: 'all' };
+  var lbData = null;
+
+  function getAllTasks(data) {
+    var tasks = [];
+    var groups = Object.keys(data.taskGroups);
+    for (var i = 0; i < groups.length; i++) {
+      var t = data.taskGroups[groups[i]];
+      for (var j = 0; j < t.length; j++) tasks.push(t[j]);
+    }
+    return tasks;
+  }
+
+  function computeScores(data, metric, scope) {
+    var individual = data.individual && data.individual[metric];
+    if (!individual) return [];
+
+    var allTasks = getAllTasks(data);
+    var totalTaskCount = allTasks.length;
+    var results = [];
+
+    for (var mi = 0; mi < data.models.length; mi++) {
+      var m = data.models[mi];
+      var sum = 0, count = 0;
+
+      for (var ti = 0; ti < allTasks.length; ti++) {
+        var task = allTasks[ti];
+        var entry = individual[task] && individual[task][m];
+        if (!entry) continue;
+
+        if (scope === 'all') {
+          var val = parseFloat(entry.all);
+          if (!isNaN(val)) { sum += val; count++; }
+        } else {
+          // Few-shot: average across all k values for this task
+          var kObj = entry.k;
+          if (!kObj) continue;
+          var kKeys = Object.keys(kObj);
+          var kSum = 0, kCount = 0;
+          for (var ki = 0; ki < kKeys.length; ki++) {
+            var kVal = kObj[kKeys[ki]];
+            var mean = typeof kVal === 'object' ? kVal.mean : kVal;
+            if (typeof mean === 'number' && !isNaN(mean)) { kSum += mean; kCount++; }
+          }
+          if (kCount > 0) { sum += kSum / kCount; count++; }
+        }
+      }
+
+      // Only include models with complete task coverage
+      if (count === totalTaskCount) {
+        results.push({ model: m, score: sum / count, tasks: count });
+      }
+    }
+
+    results.sort(function(a, b) { return b.score - a.score; });
+    return results.slice(0, 4);
+  }
+
+  function renderTable(top, metricLabel) {
+    if (!top.length) {
+      container.innerHTML = '<p class="hp-lbc__loading">No complete results</p>';
+      return;
+    }
+    var meta = lbData.modelMeta || {};
+    var html = '<table class="hp-lbc__table"><thead><tr>' +
+      '<th>Rank</th><th>Model</th><th>' + metricLabel + '</th><th>Run Date</th>' +
+      '</tr></thead><tbody>';
+
+    for (var i = 0; i < top.length; i++) {
+      var mMeta = meta[top[i].model] || {};
+      var runDate = mMeta.runDate || '—';
+      html += '<tr>' +
+        '<td><span class="hp-lbc__rank" style="background:' + RANK_COLORS[i] + '">' + (i + 1) + '</span></td>' +
+        '<td class="hp-lbc__model">' + top[i].model + '</td>' +
+        '<td class="hp-lbc__score"><strong>' + top[i].score.toFixed(3) + '</strong></td>' +
+        '<td class="hp-lbc__date">' + runDate + '</td>' +
+        '</tr>';
+    }
+    html += '</tbody></table>';
+    container.innerHTML = html;
+  }
+
+  function update() {
+    if (!lbData) return;
+    var label = heroState.metric.toUpperCase();
+    var top = computeScores(lbData, heroState.metric, heroState.scope);
+    renderTable(top, label);
+  }
+
+  function setupToggles() {
+    var metricGroup = document.getElementById('hero-metric-toggle');
+    var scopeGroup = document.getElementById('hero-scope-toggle');
+
+    metricGroup.addEventListener('click', function(e) {
+      var btn = e.target.closest('button');
+      if (!btn || btn.classList.contains('hp-lbc__toggle--active')) return;
+      metricGroup.querySelector('.hp-lbc__toggle--active').classList.remove('hp-lbc__toggle--active');
+      btn.classList.add('hp-lbc__toggle--active');
+      heroState.metric = btn.getAttribute('data-val');
+      update();
+    });
+
+    scopeGroup.addEventListener('click', function(e) {
+      var btn = e.target.closest('button');
+      if (!btn || btn.classList.contains('hp-lbc__toggle--active')) return;
+      scopeGroup.querySelector('.hp-lbc__toggle--active').classList.remove('hp-lbc__toggle--active');
+      btn.classList.add('hp-lbc__toggle--active');
+      heroState.scope = btn.getAttribute('data-val');
+      update();
+    });
+  }
 
   fetch(baseURL + '/data/leaderboard.json')
     .then(function(r) { return r.json(); })
     .then(function(data) {
-      var grouped = data.grouped && data.grouped.auroc;
-      if (!grouped) { container.innerHTML = ''; return; }
-
-      var scores = {};
-      var groups = Object.keys(data.taskGroups);
-      data.models.forEach(function(m) {
-        var total = 0, count = 0;
-        groups.forEach(function(g) {
-          if (grouped[g] && grouped[g][m]) {
-            total += parseFloat(grouped[g][m].all);
-            count++;
-          }
-        });
-        if (count > 0) scores[m] = total / count;
-      });
-
-      var ranked = Object.keys(scores).sort(function(a, b) { return scores[b] - scores[a]; });
-      var top = ranked.slice(0, 4);
-
-      var html = '<table class="hp-lbc__table"><thead><tr>' +
-        '<th>Rank</th><th>Model</th><th>AUROC</th>' +
-        '</tr></thead><tbody>';
-
-      top.forEach(function(m, i) {
-        html += '<tr>' +
-          '<td><span class="hp-lbc__rank" style="background:' + RANK_COLORS[i] + '">' + (i + 1) + '</span></td>' +
-          '<td class="hp-lbc__model">' + m + '</td>' +
-          '<td class="hp-lbc__score"><strong>' + scores[m].toFixed(3) + '</strong></td>' +
-          '</tr>';
-      });
-
-      html += '</tbody></table>';
-      container.innerHTML = html;
+      lbData = data;
+      var versionEl = document.getElementById('hero-dataset-version');
+      if (versionEl && data.datasetVersion) {
+        versionEl.textContent = 'Dataset ' + data.datasetVersion;
+      }
+      setupToggles();
+      update();
     })
     .catch(function() { container.innerHTML = ''; });
 })();
@@ -183,13 +273,12 @@
 <section class="hp-section hp-section--muted">
   <div class="hp-section__inner">
     <h2 class="hp-section-title">Citation</h2>
-    <pre class="hp-citation">@article{wornow2023ehrshot,
+    <pre class="hp-citation">@inproceedings{wornow2023ehrshot,
   title={EHRSHOT: An EHR Benchmark for Few-Shot Evaluation of Foundation Models},
-  author={Michael Wornow and Rahul Thapa and Ethan Steinberg and Jason Fries and Nigam Shah},
-  year={2023},
-  eprint={2307.02028},
-  archivePrefix={arXiv},
-  primaryClass={cs.LG}
+  author={Wornow, Michael and Thapa, Rahul and Steinberg, Ethan and Fries, Jason and Shah, Nigam},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={36},
+  year={2023}
 }</pre>
   </div>
 </section>
