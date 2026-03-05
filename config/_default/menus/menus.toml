@@ -4,6 +4,25 @@
   weight = 10
 
 [[main]]
+  name = "Dataset"
+  url = "https://redivis.com/datasets/53gc-8rhx41kgt"
+  weight = 15
+  [main.params]
+    external = true
+
+[[main]]
+  name = "Tasks"
+  url = "docs/intro/benchmark/"
+  weight = 20
+
+[[main]]
   name = "Leaderboard"
   url = "leaderboard/"
   weight = 30
+
+[[main]]
+  name = "Paper"
+  url = "https://arxiv.org/abs/2307.02028"
+  weight = 40
+  [main.params]
+    external = true
