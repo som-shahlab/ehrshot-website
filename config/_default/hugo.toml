@@ -47,7 +47,7 @@ rel  = "sitemap"
   priority = 0.5
 
 [caches]
-  [caches.getjson]
+  [caches.misc]
     dir = ":cacheDir/:project"
     maxAge = "30m"
 
