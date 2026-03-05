@@ -367,7 +367,7 @@ thead .lb-th--model {
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2.5rem;
 
   @media (max-width: 991px) {
     flex-direction: column;
@@ -376,8 +376,8 @@ thead .lb-th--model {
 }
 
 .hp-hero__text {
-  flex: 0 0 45%;
-  max-width: 45%;
+  flex: 0 0 50%;
+  max-width: 50%;
 
   @media (max-width: 991px) {
     flex: 1;
@@ -410,7 +410,7 @@ thead .lb-th--model {
 
 .hp-cta-row {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 
   @media (max-width: 991px) {
@@ -422,12 +422,12 @@ thead .lb-th--model {
 .hp-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.9rem;
+  gap: 0.35rem;
+  font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
   border-radius: 12px;
-  padding: 0.65rem 1.4rem;
+  padding: 0.6rem 1.1rem;
   transition: all 0.15s ease;
   cursor: pointer;
   white-space: nowrap;
@@ -456,9 +456,9 @@ thead .lb-th--model {
   border-color: #E5E7EB;
 
   &:hover {
-    background: #F9FAFB;
-    border-color: #D1D5DB;
-    color: #374151;
+    background: $stanfordRed;
+    border-color: $stanfordRed;
+    color: $white;
     text-decoration: none;
   }
 }
@@ -902,7 +902,7 @@ thead .lb-th--model {
   .hp-feature-card__icon--amber { background: #451A03; color: #FBBF24; }
 
   .hp-btn--secondary { background: #374151; color: #D1D5DB; border-color: #4B5563; }
-  .hp-btn--secondary:hover { background: #4B5563; color: #F9FAFB; }
+  .hp-btn--secondary:hover { background: $stanfordRed; color: $white; border-color: $stanfordRed; }
   .hp-btn--outline { background: #374151; color: #D1D5DB; border-color: #4B5563; }
   .hp-btn--outline:hover { background: #4B5563; color: #F9FAFB; }
   .hp-btn--ghost { color: #9CA3AF; }

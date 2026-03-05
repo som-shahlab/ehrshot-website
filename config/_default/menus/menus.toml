@@ -16,6 +16,13 @@
   weight = 30
 
 [[main]]
+  name = "Models"
+  url = "https://huggingface.co/StanfordShahLab"
+  weight = 35
+  [main.params]
+    external = true
+
+[[main]]
   name = "Paper"
   url = "https://proceedings.neurips.cc/paper_files/paper/2023/file/d42db1f74df54cb992b3956eb7f15a6f-Paper-Datasets_and_Benchmarks.pdf"
   weight = 40
