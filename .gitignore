@@ -1,5 +1,9 @@
 .DS_Store
 
+# Hugo build output
+public/
+resources/_gen/
+
 # Logs
 logs
 *.log
