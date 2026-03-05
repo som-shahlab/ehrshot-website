@@ -72,6 +72,10 @@
 
 ## layouts
 [[mounts]]
+  source = "layouts"
+  target = "layouts"
+
+[[mounts]]
   source = "node_modules/@hyas/core/layouts"
   target = "layouts"
 
@@ -89,10 +93,6 @@
 
 [[mounts]]
   source = "node_modules/@hyas/inline-svg/layouts"
-  target = "layouts"
-
-[[mounts]]
-  source = "layouts"
   target = "layouts"
 
 ## static
